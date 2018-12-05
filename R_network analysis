@@ -126,7 +126,8 @@ sp_all <- rbind(aebischer, badran, barille, bendahan, carobbio, feri, friedl, ga
 
 #sp_all is our oversized corpus with all the tweets. to clean this up we make an edge list.
 
-#creating an edgelist
+#create an edgelist
+#install.packages("dplyr")
 library(dplyr)
 spl = split(sp_all, sp_all$isRetweet)
 rt = mutate(spl[['TRUE']], sender = substr(text, 5, regexpr(':', text) - 1))
@@ -195,6 +196,5 @@ sort(as, decreasing = TRUE)[1:20] #show the top 20 vertices by authority score
 
 #ok, this - i think - is all the r-coding that is needed for the network analysis. perhaps with what we learn in the next sessions we can/should add something, but i don't think so.
 
-#todo: increase number of downloaded tweets to max! this is what i talked about with alexandra at the end of last session. because the corpus will be signifficantly shrunk since only the retweets wil be analyzed, and not everyone is probably that active, the highest possible number of tweets is doable.
 #todo: graph it on gephi
 #todo: interpretation. (bundesratwahlen waren jetzt auch gerade...)
