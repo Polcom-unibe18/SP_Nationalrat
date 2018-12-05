@@ -1,10 +1,10 @@
 # list of twitter haldels: @M_Aebischer, @JayBadran, @anbarrile, @bendahan, @MarinaCarobbio, @yferi, @claufriedl, @ChantalGallade, @EdithGraf, @BaGysi, @PhilippHadorn, @th_hardegger, @beaheim, @BeatJans, @margretkiener, @SusanneSlo, @MaireJack, @ada_marra, @minlimarti, @anbarrile, @meyer_mattea, @molinafab, @MartinaMunz, @NordmannRoger, @enussbi, @Valerie_Piller, @MathiasReynard, @reb_ruiz, @SchenkerSilvia, @uschneiderschue, @seilergraf, @CarloSommaruga, @ManuelTornare, @FWasserfallen, @cedricwermuth, @adrianwuethrich
 # install.packages Always with ("")!
 
-install.packages("twitteR")
+#install.packages("twitteR")
 library(twitteR)
 
-#enter twitter keys and tokens
+#enter your personal twitter keys and tokens
 setup_twitter_oauth("", 
                     "", 
                     access_token="", 
@@ -197,4 +197,4 @@ sort(as, decreasing = TRUE)[1:20] #show the top 20 vertices by authority score
 
 #todo: increase number of downloaded tweets to max! this is what i talked about with alexandra at the end of last session. because the corpus will be signifficantly shrunk since only the retweets wil be analyzed, and not everyone is probably that active, the highest possible number of tweets is doable.
 #todo: graph it on gephi
-#todo: interpretation.
+#todo: interpretation. (bundesratwahlen waren jetzt auch gerade...)
