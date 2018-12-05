@@ -1,0 +1,200 @@
+# list of twitter haldels: @M_Aebischer, @JayBadran, @anbarrile, @bendahan, @MarinaCarobbio, @yferi, @claufriedl, @ChantalGallade, @EdithGraf, @BaGysi, @PhilippHadorn, @th_hardegger, @beaheim, @BeatJans, @margretkiener, @SusanneSlo, @MaireJack, @ada_marra, @minlimarti, @anbarrile, @meyer_mattea, @molinafab, @MartinaMunz, @NordmannRoger, @enussbi, @Valerie_Piller, @MathiasReynard, @reb_ruiz, @SchenkerSilvia, @uschneiderschue, @seilergraf, @CarloSommaruga, @ManuelTornare, @FWasserfallen, @cedricwermuth, @adrianwuethrich
+# install.packages Always with ("")!
+
+install.packages("twitteR")
+library(twitteR)
+
+#enter twitter keys and tokens
+setup_twitter_oauth("", 
+                    "", 
+                    access_token="", 
+                    access_secret="")
+
+#every single SP member in the swiss National Council
+aebischer <- userTimeline("M_Aebischer", n=3200, includeRts=TRUE)
+aebischer <- twListToDF(aebischer)
+
+badran <- userTimeline("JayBadran", n=3200, includeRts=TRUE)
+badran <- twListToDF(badran)
+
+barille <- userTimeline("anbarrile", n=3200, includeRts=TRUE)
+barille <- twListToDF(barille)
+
+bendahan <- userTimeline("bendahan", n=3200, includeRts=TRUE)
+bendahan <- twListToDF(bendahan)
+
+carobbio <- userTimeline("MarinaCarobbio", n=3200, includeRts=TRUE)
+carobbio <- twListToDF(carobbio)
+
+feri <- userTimeline("yferi", n=3200, includeRts=TRUE)
+feri <- twListToDF(feri)
+
+friedl <- userTimeline("claufriedl", n=3200, includeRts=TRUE)
+friedl <- twListToDF(friedl)
+
+gallade <- userTimeline("ChantalGallade", n=3200, includeRts=TRUE)
+gallade <- twListToDF(gallade)
+
+graf <- userTimeline("EdithGraf", n=3200, includeRts=TRUE)
+graf <- twListToDF(graf)
+
+gysi <- userTimeline("BaGysi", n=3200, includeRts=TRUE)
+gysi <- twListToDF(gysi)
+
+hadorn <- userTimeline("PhilippHadorn", n=3200, includeRts=TRUE)
+hadorn <- twListToDF(hadorn)
+
+hardegger<- userTimeline("th_hardegger", n=3200, includeRts=TRUE)
+hardegger<- twListToDF(hardegger)
+
+heim<- userTimeline("beaheim", n=3200, includeRts=TRUE)
+heim<- twListToDF(heim)
+
+#jans seems not to have (re)tweeted anything. (list  of 0)
+#jans<- userTimeline("BeatJans", n=3200, includeRts=TRUE)
+#jans<- twListToDF(jans)
+
+kiener <- userTimeline("margretkiener", n=3200, includeRts=TRUE)
+kiener<- twListToDF(kiener)
+
+leutenegger <- userTimeline("SusanneSlo", n=3200, includeRts=TRUE)
+leutenegger<- twListToDF(leutenegger)
+
+maire <- userTimeline("MaireJack", n=3200, includeRts=TRUE)
+maire<- twListToDF(maire)
+
+marra <- userTimeline("ada_marra", n=3200, includeRts=TRUE)
+marra<- twListToDF(marra)
+
+min<- userTimeline("minlimarti", n=3200, includeRts=TRUE)
+min<- twListToDF(min)
+
+masshardt<- userTimeline("nmasshardt", n=3200, includeRts=TRUE)
+masshardt<- twListToDF(masshardt)
+
+meyer <- userTimeline("meyer_mattea", n=3200, includeRts=TRUE)
+meyer<- twListToDF(meyer)
+
+molina <- userTimeline("molinafab", n=3200, includeRts=TRUE)
+molina<- twListToDF(molina)
+
+munz <- userTimeline("MartinaMunz", n=3200, includeRts=TRUE)
+munz<- twListToDF(munz)
+
+nordmann <- userTimeline("NordmannRoger", n=3200, includeRts=TRUE)
+nordmann<- twListToDF(nordmann)
+
+nussbaumer<- userTimeline("enussbi", n=3200, includeRts=TRUE)
+nussbaumer<- twListToDF(nussbaumer)
+
+piller<- userTimeline("Valerie_Piller", n=3200, includeRts=TRUE)
+piller<- twListToDF(piller)
+
+reynard <- userTimeline("MathiasReynard", n=3200, includeRts=TRUE)
+reynard<- twListToDF(reynard)
+
+ruiz <- userTimeline("reb_ruiz", n=3200, includeRts=TRUE)
+ruiz<- twListToDF(ruiz)
+
+schenker<- userTimeline("SchenkerSilvia", n=3200, includeRts=TRUE)
+schenker<- twListToDF(schenker)
+
+schneider<- userTimeline("uschneiderschue", n=3200, includeRts=TRUE)
+schneider<- twListToDF(schneider)
+
+seiler<- userTimeline("seilergraf", n=3200, includeRts=TRUE)
+seiler<- twListToDF(seiler)
+
+sommaruga<- userTimeline("CarloSommaruga", n=3200, includeRts=TRUE)
+sommaruga<- twListToDF(sommaruga)
+
+tornare<- userTimeline("ManuelTornare", n=3200, includeRts=TRUE)
+tornare<- twListToDF(tornare)
+
+wasserfallen<- userTimeline("FWasserfallen", n=3200, includeRts=TRUE)
+wasserfallen<- twListToDF(wasserfallen)
+
+wermuth<- userTimeline("cedricwermuth", n=3200, includeRts=TRUE)
+wermuth<- twListToDF(wermuth)
+
+wuethrich<- userTimeline("adrianwuethrich", n=3200, includeRts=TRUE)
+wuethrich<- twListToDF(wuethrich)
+
+#join all df's together
+
+sp_all <- rbind(aebischer, badran, barille, bendahan, carobbio, feri, friedl, gallade, graf, gysi, hadorn, hardegger, heim, kiener, leutenegger, maire, marra, masshardt, meyer, min, molina, munz, nordmann, nussbaumer, piller, reynard, ruiz, schenker, schneider, seiler, sommaruga, tornare, wasserfallen, wermuth, wuethrich)
+
+#sp_all is our oversized corpus with all the tweets. to clean this up we make an edge list.
+
+#creating an edgelist
+library(dplyr)
+spl = split(sp_all, sp_all$isRetweet)
+rt = mutate(spl[['TRUE']], sender = substr(text, 5, regexpr(':', text) - 1))
+sp_rt = as.data.frame(cbind(Source = tolower(rt$sender), Target = tolower(rt$screenName)))
+sp_rt = count(sp_rt, Source, Target) 
+
+
+write.csv(sp_rt, "sp_rt.csv")
+
+
+#let's create a graph and analyze it
+library(igraph)
+rel_graph<-graph_from_data_frame(d=sp_rt, directed=T)
+
+
+#let's look at our network
+
+#counting edges
+ecount(rel_graph)
+
+#counting vertices. this shout result in the number of politicians, so 42.However as a result I get 648. Wha'?
+vcount(rel_graph)
+
+#Calculate density:The proportion of present edges from all possible edges in the network.
+edge_density(rel_graph, loops=F) #for an undirected network
+
+ecount(rel_graph)/(vcount(rel_graph)*(vcount(rel_graph)-1)) #for a directed network
+
+#Calculate reciprocity:The proportion of reciprocated ties (for a directed network).
+reciprocity(rel_graph)
+
+
+#Calculate centralization
+centr_degree(rel_graph, mode = c("in"), loops = TRUE,normalized = TRUE)$centralization
+
+
+#Calculate transitivity:the probability that the neighbors of a vertex are connected. 
+transitivity(rel_graph, type="local")
+
+#Calculate the length of the longest path between two vertices in the network
+diameter(rel_graph, directed=F, weights=NA) 
+
+#Calculate in-degree centrality
+indegree <- sort(degree(rel_graph,mode = "in"),decreasing = TRUE)
+indegree[1:20] #show the top vertices by in-degree 
+
+#Calculate out-degree
+outdegree <- sort(degree(rel_graph,mode = "out"),decreasing = TRUE)
+outdegree[1:20] #show the top vertices by out-degree
+
+#Calculate betweenness centrality
+bt <- sort(betweenness(rel_graph, directed=F, weights=NA), decreasing = TRUE)
+bt[1:20] #show the top vertices by betweenness centrality 
+
+#Calculate eigenvector centrality: connectivity with highly connected neighbors
+ec <- eigen_centrality(rel_graph, directed=T, weights=NA)
+sort(ec$vector)[1:20] #show the top vertices by eigenvector centrality
+
+#finding hubs (nodes with lots of incoming edges) and authorities (nodes with a lot of outgoing edges)
+hs <- hub_score(rel_graph, weights=NA)$vector
+as <- authority_score(rel_graph, weights=NA)$vector
+
+sort(hs, decreasing = TRUE)[1:20] #show the top 20 vertices by hub score
+sort(as, decreasing = TRUE)[1:20] #show the top 20 vertices by authority score
+
+
+#ok, this - i think - is all the r-coding that is needed for the network analysis. perhaps with what we learn in the next sessions we can/should add something, but i don't think so.
+
+#todo: increase number of downloaded tweets to max! this is what i talked about with alexandra at the end of last session. because the corpus will be signifficantly shrunk since only the retweets wil be analyzed, and not everyone is probably that active, the highest possible number of tweets is doable.
+#todo: graph it on gephi
+#todo: interpretation.
